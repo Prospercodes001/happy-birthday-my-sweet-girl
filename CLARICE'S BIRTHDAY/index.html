@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Clarice Experience ❤️</title>
+<meta name="theme-color" content="#3a0a14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#4a0e1c;--burg:#2e0610;--rich:#7a1730;--ivory:#f6efe0;--cream:#fbf6ea;--gold:#c9a45c;--goldl:#e6cf98;--rose:#c98a8f;--blush:#f3d9d6;
+--head:'Cormorant Garamond','Bodoni Moda',Georgia,serif;--body:'Lora','Libre Baskerville',Georgia,serif;--hand:'Allura','Dancing Script',cursive}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--burg);color:var(--ivory);line-height:1.7;overflow-x:hidden;font-size:17px}
+body.lock{overflow:hidden;height:100vh}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;-webkit-tap-highlight-color:transparent}
+button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);font-weight:500;line-height:1.1}
+.hand{font-family:var(--hand);font-weight:400}
+section{position:relative;padding:clamp(4.5rem,11vw,8rem) 1.25rem;overflow:hidden}
+.wrap{max-width:1000px;margin:0 auto;position:relative;z-index:2}
+.eyebrow{font-family:var(--head);letter-spacing:.32em;text-transform:uppercase;font-size:.85rem;color:var(--gold);text-align:center;margin-bottom:1rem}
+.title{font-size:clamp(2.1rem,7vw,4.2rem);text-align:center;letter-spacing:.03em;margin-bottom:1rem}
+.sub{text-align:center;font-style:italic;font-size:1.1rem;opacity:.85;max-width:34rem;margin:0 auto}
+.orn{display:block;margin:1.4rem auto;width:150px;height:14px}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;z-index:1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s ease}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.15s}.d2{transition-delay:.3s}.d3{transition-delay:.45s}
+.dark{background:radial-gradient(ellipse at 50% 0,var(--wine),var(--burg) 70%);color:var(--ivory)}
+.light{background:var(--ivory);color:#3b1a1f}
+.light .eyebrow{color:#9a7633}
+.goldline{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border:0;margin:0}
+
+/* INTRO */
+#intro{position:fixed;inset:0;z-index:100;background:radial-gradient(ellipse at 50% 40%,#5a1223,#2a050d 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem;transition:opacity 1.4s ease,visibility 1.4s}
+#intro.gone{opacity:0;visibility:hidden;pointer-events:none}
+#intro .l1{font-family:var(--head);letter-spacing:.28em;font-size:clamp(.72rem,2.8vw,1rem);color:var(--goldl);opacity:0;animation:fi 1.6s .4s forwards}
+#intro h1{font-size:clamp(2.1rem,9vw,4.6rem);margin:1rem 0 .4rem;opacity:0;animation:fi 1.6s 2.2s forwards;letter-spacing:.04em}
+#intro .l3{font-family:var(--hand);font-size:clamp(1.6rem,6vw,2.4rem);color:var(--blush);opacity:0;animation:fi 1.6s 3.6s forwards}
+@keyframes fi{to{opacity:1}}
+.env{position:relative;width:min(260px,70vw);height:min(176px,48vw);margin:1.6rem 0 1.4rem;opacity:0;animation:fi 1.4s 4.4s forwards}
+.env .back{position:absolute;inset:0;background:#e9d9b8;border-radius:4px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.env .card{position:absolute;left:8%;right:8%;top:6%;height:80%;background:var(--cream);border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:var(--hand);font-size:2rem;color:var(--rich);transition:transform 1.2s ease .5s;z-index:2}
+.env .front{position:absolute;inset:0;z-index:3;background:linear-gradient(135deg,transparent 49.5%,#d8c49c 50%) left/50% 100% no-repeat,linear-gradient(225deg,transparent 49.5%,#d8c49c 50%) right/50% 100% no-repeat;border-radius:4px;clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%)}
+.env .flap{position:absolute;left:0;right:0;top:0;height:60%;z-index:4;background:#dcc9a0;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease,z-index 0s .45s}
+.env .seal{position:absolute;left:50%;top:50%;width:38px;height:38px;margin:-19px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#b23048,#6d0f25);z-index:5;box-shadow:0 2px 6px rgba(0,0,0,.5);display:grid;place-items:center;color:var(--goldl);font-size:.9rem;transition:opacity .4s}
+.glow{position:absolute;left:50%;top:50%;width:360px;height:360px;margin:-180px;border-radius:50%;background:radial-gradient(circle,rgba(230,207,152,.8),transparent 65%);opacity:0;transition:opacity 1s;z-index:1;pointer-events:none}
+#intro.opening .flap{transform:rotateX(180deg);z-index:1}
+#intro.opening .seal{opacity:0}
+#intro.opening .card{transform:translateY(-55%)}
+#intro.opening .glow{opacity:1}
+.btn{font-family:var(--head);letter-spacing:.24em;text-transform:uppercase;font-size:.95rem;font-weight:600;padding:1rem 2.2rem;min-height:52px;border:1px solid var(--gold);color:var(--goldl);background:rgba(201,164,92,.08);border-radius:50px;transition:all .4s;position:relative;overflow:hidden}
+.btn:hover{background:var(--gold);color:var(--burg);box-shadow:0 0 30px rgba(201,164,92,.5)}
+.btn:active{transform:scale(.96)}
+#openBtn{opacity:0;animation:fi 1.2s 5.2s forwards}
+.light .btn{color:var(--rich);border-color:var(--rich);background:transparent}
+.light .btn:hover{background:var(--rich);color:var(--ivory)}
+
+/* music */
+#music{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));z-index:60;width:48px;height:48px;border-radius:50%;background:rgba(46,6,16,.85);border:1px solid var(--gold);display:none;align-items:center;justify-content:center;gap:3px;backdrop-filter:blur(6px);box-shadow:0 4px 16px rgba(0,0,0,.4)}
+#music.show{display:flex}
+#music i{display:block;width:3px;height:6px;background:var(--goldl);border-radius:2px}
+#music.on i{animation:wv 1s ease-in-out infinite}
+#music i:nth-child(2){animation-delay:.2s!important}#music i:nth-child(3){animation-delay:.4s!important}#music i:nth-child(4){animation-delay:.1s!important}
+@keyframes wv{50%{height:20px}}
+#music.na{opacity:.4}
+
+/* hero */
+#girl{min-height:100vh;display:flex;align-items:center;background:radial-gradient(ellipse at 50% 30%,#fffaf0,var(--ivory) 70%)}
+#girl .name{font-family:var(--hand);font-size:clamp(3.4rem,15vw,8rem);color:var(--rich);text-align:center;line-height:1.05;margin:.5rem 0}
+#girl .title{color:#3b1a1f}
+.floral{position:absolute;width:min(260px,50vw);opacity:.55;z-index:1;animation:sway 9s ease-in-out infinite alternate}
+.floral.a{left:-30px;top:-10px}.floral.b{right:-30px;bottom:-10px;transform:rotate(180deg);animation-direction:alternate-reverse}
+@keyframes sway{to{transform:rotate(6deg) translateY(6px)}}
+.floral.b{animation:swayb 9s ease-in-out infinite alternate}
+@keyframes swayb{from{transform:rotate(180deg)}to{transform:rotate(174deg) translateY(6px)}}
+
+/* timeline */
+.tl{position:relative;margin-top:3.5rem;padding-left:2.6rem}
+.tl::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:linear-gradient(var(--gold),rgba(201,164,92,.2))}
+.ch{position:relative;margin-bottom:2rem}
+.ch .dot{position:absolute;left:-2.6rem;top:1.4rem;width:29px;height:29px;border-radius:50%;background:var(--burg);border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--head);font-size:.8rem;color:var(--goldl);z-index:2}
+.ch button.card{display:block;width:100%;text-align:left;padding:1.4rem 1.3rem;border:1px solid rgba(201,164,92,.35);background:rgba(246,239,224,.04);transition:all .5s;position:relative}
+.ch:nth-child(odd) button.card{border-radius:2px 24px 2px 24px}
+.ch:nth-child(even) button.card{border-radius:24px 2px 24px 2px;background:rgba(201,164,92,.07)}
+.ch:nth-child(3n) button.card{background:linear-gradient(135deg,rgba(243,217,214,.09),rgba(201,164,92,.05))}
+.ch button.card:hover{border-color:var(--gold);transform:translateX(4px)}
+.ch .no{font-family:var(--head);letter-spacing:.3em;font-size:.78rem;color:var(--gold)}
+.ch h3{font-size:1.55rem;margin:.3rem 0 .5rem}
+.ch p.s{opacity:.88}
+.ch .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s ease}
+.ch .more>div{overflow:hidden}
+.ch.open .more{grid-template-rows:1fr}
+.ch .more p{padding-top:.9rem;margin-top:.9rem;border-top:1px dashed rgba(201,164,92,.4);color:var(--blush)}
+.ch .tap{display:block;margin-top:.7rem;font-family:var(--hand);font-size:1.5rem;color:var(--goldl)}
+.ch svg.ic{width:76px;height:50px;float:right;margin:0 0 .4rem .8rem;stroke:var(--goldl);fill:none;stroke-width:1.2;stroke-linecap:round}
+.note-h{position:absolute;right:.8rem;bottom:-1.2rem;font-family:var(--hand);font-size:1.4rem;color:var(--rose);transform:rotate(-4deg);z-index:3;background:var(--burg);padding:0 .4rem}
+.closing{margin:4rem auto 0;max-width:34rem;text-align:center;font-family:var(--head);font-style:italic;font-size:clamp(1.5rem,5vw,2.2rem);line-height:1.35;color:var(--goldl);padding:2rem 0;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);position:relative}
+.closing::before,.closing::after{content:"✦";position:absolute;left:50%;transform:translateX(-50%);background:var(--burg);color:var(--gold);font-size:.9rem;padding:0 .6rem}
+.closing::before{top:-.75rem}.closing::after{bottom:-.75rem}
+
+/* scrapbook */
+#little{background:#efe3cc;color:#3b1a1f;background-image:radial-gradient(rgba(122,23,48,.05) 1px,transparent 1px);background-size:22px 22px}
+#little .title{color:var(--rich)}
+.sb{display:grid;gap:1.8rem;margin-top:3rem;grid-template-columns:1fr}
+.paper{position:relative;background:#fffaf0;padding:1.7rem 1.4rem 1.4rem;box-shadow:0 10px 24px rgba(74,14,28,.18),0 1px 0 rgba(0,0,0,.05);text-align:center;transition:transform .5s,box-shadow .5s;min-height:150px;display:flex;flex-direction:column;justify-content:center;width:100%}
+.paper:hover,.paper:focus-visible{transform:rotate(0) translateY(-6px)!important;box-shadow:0 18px 34px rgba(74,14,28,.25)}
+.paper .tape{position:absolute;top:-12px;left:50%;width:84px;height:24px;margin-left:-42px;background:rgba(201,164,92,.45);transform:rotate(-3deg)}
+.paper .t1{font-family:var(--hand);font-size:1.9rem;line-height:1.2;color:var(--rich)}
+.paper .t2{font-family:var(--body);font-style:italic;font-size:1rem;max-height:0;opacity:0;overflow:hidden;transition:all .6s;color:#5b2a33}
+.paper.open .t2{max-height:120px;opacity:1;margin-top:.8rem}
+.paper:nth-child(1){transform:rotate(-2deg)}.paper:nth-child(2){transform:rotate(1.6deg);background:var(--blush)}.paper:nth-child(4){transform:rotate(-1.4deg);background:#f4e6c8}.paper:nth-child(5){transform:rotate(2deg)}
+.paper .clip{position:absolute;top:-14px;right:18px;width:14px;height:42px;border:2px solid #9a9a9a;border-radius:8px}
+.mini{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;min-height:170px}
+.menv{width:120px;height:82px;position:relative;background:#e2cf9f;box-shadow:0 8px 18px rgba(74,14,28,.25);border-radius:3px}
+.menv::before{content:"";position:absolute;inset:0;background:#d6c08c;clip-path:polygon(0 0,100% 0,50% 60%);transform-origin:top;transition:transform .6s}
+.menv .p{position:absolute;left:10%;right:10%;top:10%;bottom:10%;background:#fffaf0;transition:transform .7s .2s;font-family:var(--hand);font-size:1.15rem;line-height:1.1;color:var(--rich);display:grid;place-items:center;padding:4px}
+.mini.open .menv::before{transform:rotateX(180deg)}
+.mini.open .p{transform:translateY(-62px)}
+.mini.open .menv{margin-top:60px}
+.heartbtn{font-size:2.4rem;color:var(--rich);animation:beat 2.4s infinite;transition:transform .3s;min-height:56px;min-width:56px}
+@keyframes beat{50%{transform:scale(1.12)}}
+.heartmsg{font-family:var(--hand);font-size:1.7rem;color:var(--rich);opacity:0;transition:opacity .8s;min-height:3.4rem;line-height:1.2}
+.heartmsg.in{opacity:1}
+.float{position:absolute;font-size:1.3rem;color:var(--gold);opacity:.5;animation:fl 7s ease-in-out infinite alternate;z-index:1}
+@keyframes fl{to{transform:translateY(-22px) rotate(12deg)}}
+
+/* midnight */
+#midnight{background:radial-gradient(ellipse at 50% 100%,#2a0a24,#060612 65%);color:#e8e4f4;min-height:90vh;display:flex;align-items:center;text-align:center}
+#stars{position:absolute;inset:0;z-index:1}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:tw 3s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.1}to{opacity:.9}}
+.wifi{width:64px;height:64px;margin:0 auto 1.6rem;filter:drop-shadow(0 0 12px rgba(230,207,152,.8))}
+.wifi path,.wifi circle{stroke:var(--goldl);fill:none;stroke-width:3;stroke-linecap:round}
+.wifi circle{fill:var(--goldl)}
+.wifi .w1,.wifi .w2,.wifi .w3{animation:wf 2.8s infinite}
+.wifi .w2{animation-delay:.3s}.wifi .w3{animation-delay:.6s}
+@keyframes wf{0%,100%{opacity:.15}40%,70%{opacity:1}}
+.tw{font-family:'Courier New',ui-monospace,monospace;font-size:clamp(1.15rem,5vw,2.3rem);letter-spacing:.06em;color:var(--goldl);min-height:2.8em;display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.tw::after{content:"";display:inline-block;width:2px;height:1.1em;background:var(--goldl);margin-left:4px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.tw-after{margin-top:1.6rem;font-style:italic;opacity:0;transition:opacity 1.4s;max-width:30rem;margin-inline:auto;font-size:1.1rem}
+.tw-after.in{opacity:.9}
+
+/* letter */
+#letter{background:linear-gradient(var(--blush),#f7e6df);color:#3b1a1f}
+#letter .title{color:var(--rich)}
+.lenv{position:relative;width:min(340px,86vw);height:min(230px,58vw);margin:3rem auto 2rem;transition:all .9s ease}
+.lenv .b{position:absolute;inset:0;background:#e8d8b6;border-radius:5px;box-shadow:0 22px 50px rgba(74,14,28,.3)}
+.lenv .f{position:absolute;inset:0;background:#dfcca3;clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);z-index:3;border-radius:5px}
+.lenv .fl{position:absolute;left:0;right:0;top:0;height:60%;background:#d3bd90;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;z-index:4;transition:transform 1s}
+.lenv .ws{position:absolute;left:50%;top:48%;width:54px;height:54px;margin:-27px;border-radius:50%;z-index:5;background:radial-gradient(circle at 35% 30%,#b83450,#6a0d24);box-shadow:0 3px 8px rgba(0,0,0,.4);display:grid;place-items:center;font-family:var(--hand);font-size:1.8rem;color:var(--goldl);transition:opacity .5s}
+.lenv.open .fl{transform:rotateX(180deg);z-index:1}.lenv.open .ws{opacity:0}
+.lenv.gone{height:0;margin:0;opacity:0;overflow:hidden}
+.lwrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows 1.8s ease}
+.lwrap.open{grid-template-rows:1fr}
+.lwrap>div{overflow:hidden}
+.paperL{max-width:680px;margin:1rem auto 0;background:#fffaf0;padding:clamp(1.6rem,6vw,3.6rem) clamp(1.3rem,6vw,3.4rem);box-shadow:0 20px 60px rgba(74,14,28,.25);border:1px solid rgba(201,164,92,.5);position:relative;color:#35171c;font-size:clamp(1.06rem,3.8vw,1.2rem);line-height:1.9}
+.paperL::before{content:"";position:absolute;inset:8px;border:1px solid rgba(201,164,92,.45);pointer-events:none}
+.paperL p{margin-bottom:1.25rem}
+.paperL .big{font-family:var(--head);font-size:2.6rem;font-weight:600;color:var(--rich);letter-spacing:.1em;margin:1.4rem 0}
+.paperL .sig{font-family:var(--hand);font-size:2.2rem;color:var(--rich);text-align:center;line-height:1.3;margin-top:2rem}
+.lcta{text-align:center}
+
+/* wishes */
+#wishes{background:radial-gradient(ellipse at 50% 50%,#6a1428,var(--burg) 75%)}
+.wish{max-width:640px;margin:3rem auto 0;padding:2.4rem 1.5rem;border:1px solid var(--gold);position:relative;text-align:center;background:rgba(0,0,0,.18)}
+.wish::before{content:"";position:absolute;inset:7px;border:1px solid rgba(201,164,92,.35)}
+.wish p{font-family:var(--head);font-size:clamp(1.3rem,4.6vw,1.75rem);line-height:1.55;margin-bottom:1.5rem;position:relative}
+.wish p:last-child{margin:0;color:var(--goldl)}
+.wish .k{position:absolute;font-family:var(--hand);font-size:2.4rem;color:var(--gold);background:var(--wine);padding:0 .6rem;top:-1.4rem;left:50%;transform:translateX(-50%)}
+
+/* cake */
+#cake{background:radial-gradient(ellipse at 50% 55%,#5a1223,#1f040b 75%);text-align:center;min-height:100vh;display:flex;align-items:center}
+#cake .t1{font-family:var(--head);letter-spacing:.14em;font-size:clamp(1rem,3.6vw,1.4rem);color:var(--goldl)}
+#cake .t2{font-size:clamp(2rem,8vw,3.8rem);margin:.6rem 0 1.4rem;font-family:var(--head);letter-spacing:.06em}
+#cake .t3{font-style:italic;max-width:26rem;margin:0 auto .5rem;opacity:.9}
+#cake .t4{font-family:var(--hand);font-size:2.4rem;color:var(--blush)}
+.scene{position:relative;width:min(300px,82vw);margin:5.5rem auto 2rem;height:240px}
+.cglow{position:absolute;left:50%;top:-80px;width:340px;height:340px;margin-left:-170px;border-radius:50%;background:radial-gradient(circle,rgba(255,196,110,.45),transparent 65%);transition:opacity 2s;pointer-events:none;animation:gl 3s ease-in-out infinite alternate}
+@keyframes gl{to{transform:scale(1.08);opacity:.85}}
+.out .cglow{opacity:0;animation:none}
+.plate{position:absolute;bottom:0;left:-6%;width:112%;height:22px;border-radius:50%;background:linear-gradient(#e8d8b6,#b99a5a);box-shadow:0 14px 26px rgba(0,0,0,.6)}
+.tier{position:absolute;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#e9dcc0,#fffaf0 40%,#efe2c6 80%,#d5c49f);border-radius:8px}
+.tier.t-b{bottom:10px;width:100%;height:92px}
+.tier.t-t{bottom:100px;width:68%;height:70px}
+.tier::before{content:"";position:absolute;left:0;right:0;top:0;height:30px;background:radial-gradient(circle at 12px 0,#fffaf0 13px,transparent 14px) 0 0/24px 30px repeat-x;transform:translateY(-4px)}
+.tier .band{position:absolute;left:0;right:0;bottom:16px;height:10px;background:var(--rich);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+.tier.t-t .band{bottom:12px}
+.tier .pearls{position:absolute;left:0;right:0;bottom:2px;height:8px;background:radial-gradient(circle,var(--gold) 3px,transparent 4px) 0 0/16px 8px repeat-x}
+.berries{position:absolute;top:-10px;left:0;right:0;display:flex;justify-content:space-around;padding:0 14%}
+.berries b{width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#c4344f,#6a0d24);display:block}
+.candle{position:absolute;left:50%;bottom:170px;width:12px;height:66px;margin-left:-6px;background:repeating-linear-gradient(60deg,#fffaf0 0 8px,#e6cf98 8px 16px);border-radius:3px 3px 0 0;z-index:3}
+.wick{position:absolute;left:5px;top:-8px;width:2px;height:9px;background:#2a1a10;transition:background .5s}
+.flamebtn{position:absolute;left:50%;top:-54px;width:60px;height:70px;margin-left:-30px;z-index:5;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px}
+.flame{width:18px;height:38px;background:radial-gradient(ellipse at 50% 75%,#fff6c8 0,#ffc65a 35%,#ff8a2a 70%,transparent 72%);border-radius:50% 50% 50% 50%/65% 65% 35% 35%;transform-origin:50% 100%;animation:fk .18s infinite alternate;filter:drop-shadow(0 0 14px rgba(255,170,60,.9));transition:transform 1s,opacity 1s}
+@keyframes fk{from{transform:scale(1,1) rotate(-3deg)}to{transform:scale(.92,1.07) rotate(3deg)}}
+.flame.dying{animation:fk .07s infinite alternate;transform:scale(.3);opacity:.3}
+.flame.gone{display:none}
+.smoke{position:absolute;left:50%;top:-14px;z-index:4;pointer-events:none}
+.smoke i{position:absolute;width:10px;height:10px;border-radius:50%;background:rgba(220,220,220,.5);filter:blur(4px);opacity:0}
+.out .smoke i{animation:sm 3.6s ease-out infinite}
+.smoke i:nth-child(2){animation-delay:.7s!important}.smoke i:nth-child(3){animation-delay:1.4s!important}
+@keyframes sm{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:.6}100%{opacity:0;transform:translate(14px,-90px) scale(3)}}
+.hint{font-size:.95rem;opacity:.8;margin-bottom:.8rem}
+.mic{font-family:var(--head);font-size:.9rem;letter-spacing:.15em;text-transform:uppercase;color:var(--goldl);text-decoration:underline;text-underline-offset:5px;padding:.8rem;min-height:44px}
+.after>*{opacity:0;transform:translateY(14px);transition:all 1.2s}
+.after>.in{opacity:1;transform:none}
+.after .w1{font-family:var(--head);font-size:clamp(2rem,8vw,3.4rem);letter-spacing:.1em;color:var(--goldl);margin-top:1rem}
+.after .w2{max-width:30rem;margin:.6rem auto;font-size:1.1rem}
+.after .w3{font-family:var(--hand);font-size:clamp(2.2rem,8vw,3.2rem);color:var(--blush)}
+
+/* final */
+#final{min-height:100vh;display:flex;align-items:center;text-align:center;background:radial-gradient(ellipse at 50% 40%,#7a1730,#2a050d 75%)}
+#final h2{font-size:clamp(2rem,8.5vw,4.6rem);letter-spacing:.05em;color:var(--goldl);text-shadow:0 0 30px rgba(201,164,92,.4)}
+#final h2 span{display:block;font-size:.8em;color:var(--ivory);margin-top:.5rem}
+#final .en{font-size:clamp(1.15rem,4vw,1.5rem);font-style:italic;margin:2rem auto 1.5rem;max-width:30rem}
+#final .sg{font-family:var(--hand);font-size:clamp(2.4rem,9vw,4.4rem);color:var(--blush);line-height:1.2;margin:1.5rem 0 2.5rem;text-shadow:0 0 24px rgba(243,217,214,.35)}
+#final .seq{opacity:0;transform:translateY(18px);transition:all 1.6s}
+#final .seq.in{opacity:1;transform:none}
+
+/* footer */
+footer{background:var(--ivory);color:#3b1a1f;text-align:center;padding:5rem 1.25rem 4rem;position:relative}
+footer .m{font-family:var(--head);letter-spacing:.2em;font-size:.95rem;color:#9a7633;font-weight:600}
+footer .c{font-size:.85rem;letter-spacing:.12em;margin:1rem 0 .4rem;opacity:.75}
+footer .nm{font-family:var(--hand);font-size:clamp(2.2rem,8vw,3.6rem);color:var(--rich);line-height:1.15;margin:.5rem auto 0;max-width:30rem}
+footer .rs{font-family:var(--head);font-size:.82rem;letter-spacing:.14em;margin-top:.3rem;color:#6b3a42}
+footer .oo{font-family:var(--hand);font-size:1.9rem;color:#9a7633;margin:1.4rem 0}
+footer .bt{font-family:var(--head);letter-spacing:.3em;font-size:.8rem;color:#6b3a42;border-top:1px solid var(--gold);display:inline-block;padding-top:1rem;margin-top:.8rem}
+footer .tl2{font-family:var(--head);font-style:italic;margin-top:1.4rem;color:var(--rich)}
+
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+#app{visibility:hidden}
+#app.show{visibility:visible}
+
+@media(min-width:760px){
+ body{font-size:18px}
+ .sb{grid-template-columns:repeat(6,1fr);gap:2.2rem 1.6rem}
+ .sb>*:nth-child(1){grid-column:1/3}.sb>*:nth-child(2){grid-column:3/5;margin-top:2rem}.sb>*:nth-child(3){grid-column:5/7}
+ .sb>*:nth-child(4){grid-column:1/3;margin-top:-.5rem}.sb>*:nth-child(5){grid-column:3/5}.sb>*:nth-child(6){grid-column:5/7;margin-top:1.5rem}
+ .tl{padding-left:0;max-width:900px;margin-inline:auto}
+ .tl::before{left:50%}
+ .ch{width:50%;padding-right:3rem}
+ .ch:nth-child(even){margin-left:50%;padding-right:0;padding-left:3rem}
+ .ch .dot{left:auto;right:-14.5px}.ch:nth-child(even) .dot{right:auto;left:-14.5px}
+ .ch:nth-child(odd){margin-top:0}
+ .ch:nth-child(even){margin-top:-3rem}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;transition-delay:0s!important}
+ #intro .l1,#intro h1,#intro .l3,.env,#openBtn{opacity:1;animation:none}
+}
+</style>
+</head>
+<body class="lock">
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<div id="intro" role="dialog" aria-label="A birthday gift for Clarice">
+ <p class="l1">A LITTLE SOMETHING, MADE ESPECIALLY FOR YOU...</p>
+ <h1>HAPPY 19TH BIRTHDAY, CLARICE. ❤️</h1>
+ <p class="l3">For Ogechi, with love.</p>
+ <div class="env" aria-hidden="true"><div class="glow"></div><div class="back"></div><div class="card">Clarice</div><div class="front"></div><div class="flap"></div><div class="seal">❦</div></div>
+ <button class="btn" id="openBtn">Open your gift</button>
+</div>
+
+<button id="music" aria-label="Play or pause background music" aria-pressed="false"><i></i><i></i><i></i><i></i></button>
+
+<main id="app">
+
+<!-- THE GIRL -->
+<section id="girl" class="light grain">
+ <svg class="floral a" viewBox="0 0 200 200" fill="none" stroke="#b5788a" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><path d="M5 195C50 150 70 100 120 60"/><path d="M40 160c-20-6-28-22-26-36 18 2 28 16 26 36zM70 125c-4-20 6-34 22-40 6 18-4 34-22 40zM100 90c-14-10-14-28-4-40 14 8 16 26 4 40z"/><circle cx="130" cy="50" r="10"/><path d="M130 40c-8-10-2-22 8-22s14 12 4 22M140 50c10-6 22 0 22 10s-12 14-22 6M130 60c4 12-4 22-14 20s-12-14-2-22M120 50c-12 0-18-10-14-18s14-8 20 0"/></svg>
+ <svg class="floral b" viewBox="0 0 200 200" fill="none" stroke="#b5788a" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><path d="M5 195C50 150 70 100 120 60"/><path d="M40 160c-20-6-28-22-26-36 18 2 28 16 26 36zM70 125c-4-20 6-34 22-40 6 18-4 34-22 40zM100 90c-14-10-14-28-4-40 14 8 16 26 4 40z"/><circle cx="130" cy="50" r="10"/><path d="M130 40c-8-10-2-22 8-22s14 12 4 22M140 50c10-6 22 0 22 10s-12 14-22 6"/></svg>
+ <div class="wrap">
+  <p class="eyebrow rv">The story begins here</p>
+  <h2 class="title rv d1">THE GIRL CALLED</h2>
+  <p class="name rv d2">Clarice</p>
+  <svg class="orn rv d2" viewBox="0 0 150 14" fill="none" stroke="#b08a3e" aria-hidden="true"><path d="M0 7h58M92 7h58"/><path d="M75 1l6 6-6 6-6-6z" fill="#b08a3e"/></svg>
+  <p class="sub rv d3">19 years of you. A few years of us. A lifetime of possibilities.</p>
+ </div>
+</section>
+
+<!-- OUR STORY -->
+<section id="story" class="dark grain">
+ <div class="wrap">
+  <p class="eyebrow rv">Our story</p>
+  <h2 class="title rv d1">AND THEN, THERE WAS US...</h2>
+  <p class="sub rv d2">Tap a chapter to turn the page.</p>
+  <div class="tl" id="tl"></div>
+  <p class="closing rv">“Not every beautiful story unfolds perfectly. Sometimes, even the imperfect chapters become memories worth keeping.”</p>
+ </div>
+</section>
+
+<!-- LITTLE THINGS -->
+<section id="little" class="grain">
+ <span class="float" style="left:6%;top:10%">✦</span><span class="float" style="right:8%;top:22%;animation-delay:1s">❦</span><span class="float" style="left:12%;bottom:12%;animation-delay:2s">✧</span>
+ <div class="wrap">
+  <p class="eyebrow rv" style="color:#9a7633">A little box of memories</p>
+  <h2 class="title rv d1">SOME THINGS ARE JUST TOO MEMORABLE 😂❤️</h2>
+  <p class="sub rv d2">Tap the notes. Some of them have a little more to say.</p>
+  <div class="sb">
+   <button class="paper rv" data-flip><span class="tape"></span><span class="t1">Some memories age rather beautifully. ❤️</span><span class="t2">Like good wine. Or jollof. Debatable.</span></button>
+   <button class="paper rv d1" data-flip><span class="tape"></span><span class="t1">You really do have a way of making certain moments unforgettable.</span><span class="t2">That’s a compliment. Mostly. 😂</span></button>
+   <div class="paper mini rv d2" data-env><span class="tape"></span><button class="menv" aria-label="Open the little envelope"><span class="p">Happy birthday, pretty girl ❤️</span></button><span class="hand" style="font-size:1.5rem;color:var(--rich)">tap to open</span></div>
+   <button class="paper rv" data-flip><span class="tape"></span><span class="t1">A little reminder that you’re worth celebrating.</span><span class="t2">Today and on the ordinary days too.</span></button>
+   <div class="paper rv d1" style="align-items:center"><span class="clip"></span><button class="heartbtn" id="hrt" aria-label="Reveal a message">❤</button><p class="heartmsg" id="hmsg" aria-live="polite"></p></div>
+   <button class="paper rv d2" data-flip><span class="tape"></span><span class="t1">And yes, you’re still troublesome. 😂❤️</span><span class="t2">Some things never change, and honestly? Fine.</span></button>
+  </div>
+ </div>
+</section>
+
+<!-- MIDNIGHT -->
+<section id="midnight">
+ <div id="stars" aria-hidden="true"></div>
+ <div class="wrap">
+  <p class="eyebrow rv">After midnight</p>
+  <h2 class="title rv d1" style="font-size:clamp(1.8rem,6vw,3.2rem);margin-bottom:2rem">A LITTLE SOMETHING FOR THE LATE HOURS...</h2>
+  <svg class="wifi rv d2" viewBox="0 0 64 64" aria-hidden="true"><path class="w3" d="M6 24a36 36 0 0 1 52 0"/><path class="w2" d="M15 33a23 23 0 0 1 34 0"/><path class="w1" d="M24 42a10 10 0 0 1 16 0"/><circle cx="32" cy="52" r="3.5"/></svg>
+  <div class="tw" id="tw" aria-label="THEY WOULD SOON PUT OFF THE WIFI"></div>
+  <p class="tw-after" id="twa">If you know, you know. 😂 Some phrases are simply too iconic to forget.</p>
+ </div>
+</section>
+
+<!-- LETTER -->
+<section id="letter" class="grain">
+ <div class="wrap">
+  <p class="eyebrow rv" style="color:#9a7633">Words, written slowly</p>
+  <h2 class="title rv d1">A LETTER FOR YOU ❤️</h2>
+  <div class="lcta">
+   <div class="lenv rv d2" id="lenv"><div class="b"></div><div class="f"></div><div class="fl"></div><div class="ws">C</div></div>
+   <button class="btn rv d3" id="openLetter">Open letter</button>
+  </div>
+  <div class="lwrap" id="lwrap"><div>
+   <article class="paperL" aria-label="Birthday letter">
+<p>Happy 19th birthday, Ogechi Clarice Nzeadibe. ❤️</p>
+<p>Honestly, I don't even know where to begin without making this unnecessarily sentimental 😂. But then again, I suppose you deserve a little sentimentality today, so I'll allow myself.</p>
+<p>First of all, happy birthday, my sweet girl. ❤️</p>
+<p>I want to say thank you. Thank you for the past 3/4 years. For everything, really. The beautiful moments, the difficult ones, the fights, the love, the truths, the lies, the laughter, the tears, the misunderstandings, the random conversations, the silly arguments and all the little things that somehow became memories I'll probably carry for a very long time.</p>
+<p>Sometimes I genuinely sit back and wonder how two people who spent about 5/6 years barely being part of each other's lives somehow found their way back to one another. And not just found their way back, but somehow managed to create an entire history together. 😂</p>
+<p>I still find it funny that you were literally the first person I spoke to when I walked into Mr. Kunle's JAMB class. Who would have thought that something as ordinary as attending lessons would eventually lead to all of this?</p>
+<p>Then there was that period during lessons when there was obviously something going on between us, even if neither of us was particularly brave enough to admit it properly. 😂</p>
+<p>And then, before that public holiday, I finally gathered enough courage to approach you properly.</p>
+<p>The first kiss came after the public holiday.</p>
+<p>I still remember that. I remember how things seemed to shift from that moment. How something that had previously existed in little glances, conversations and unspoken feelings suddenly became something real.</p>
+<p>Then the lessons ended, and we were both practically wondering what would happen next. We genuinely thought not seeing each other anymore might be the end of whatever was beginning between us. But somehow, we kept it going for another month without even seeing each other.</p>
+<p>And then came our first proper reunion, our first proper make-out and all the butterflies, excitement and other things that came with being two young people who clearly liked each other a little too much. 😂</p>
+<p>And of course, how could I possibly forget our first pregnancy scare? 😭😂</p>
+<p>I don't think either of us had ever been that terrified. We were practically imagining our entire lives changing overnight. Looking back, I sometimes laugh at how much we thought we understood about life when we were still figuring out so many things.</p>
+<p>But those memories are ours. And regardless of how things eventually turned out, there's something rather beautiful about having experienced them with you.</p>
+<p>Then came that period when I zoned out and practically left you hanging because of everything happening with me and my family at the time.</p>
+<p>And honestly, looking back, I can imagine the number of things that must have crossed your mind. You probably questioned where my attention had gone, whether there was someone else, whether I had lost interest or whether there was something I wasn't telling you. I wouldn't even blame you if those thoughts crossed your mind because, from your end, all you probably saw was someone who had suddenly become distant without giving you much of an explanation.</p>
+<p>But I wish you knew that, regardless of how things might have appeared, there was never someone else. And honestly, the idea of me looking elsewhere? 😂 Please. You were already giving me enough to think about. What exactly was I looking for that I hadn't already found in you? No girl came close to you in my eyes, and I genuinely wasn't interested in finding out whether anyone could.</p>
+<p>You meant so much to me then. More than I probably knew how to express, and certainly more than my actions during that period suggested. You were genuinely one of the most important people in my life. I valued you immensely, your presence mattered to me, and having you in my corner meant more than you probably realised.</p>
+<p>I wasn't taking your place in my life for granted, even though my inability to communicate might have made it seem that way.</p>
+<p>I know I could have handled things differently. I could have let you in, explained what was happening and spared you some of the uncertainty. Instead, I withdrew, and I understand that my silence might have created its own hurt.</p>
+<p>Eventually, I reached out again around the time you were preparing to go to school, and somehow, despite everything, we found our way back to each other. Looking back, there's something quite remarkable about that. After all the silence, unanswered questions and uncertainty, we somehow found ourselves talking again, giving what we had another opportunity to breathe.</p>
+<p>But things weren't quite the same anymore.</p>
+<p>You started pulling away, I did too, in my own ways. We had our arguments, misunderstandings, disagreements, blocking, unblocking, words we shouldn't have said and conversations we probably should have had but never did.</p>
+<p>Sometimes I think we both wanted to be understood so badly that we forgot to understand each other.</p>
+<p>And somehow, two people who genuinely cared about each other became capable of hurting each other in ways neither probably intended at the beginning.</p>
+<p>I've reflected on that quite a bit. I won't sit here and paint myself as the innocent one because I certainly wasn't. There were things you did that hurt me, and there were things I did that hurt you. There were moments I could have been more patient, more understanding and perhaps a little less stubborn. 😂</p>
+<p>But I also think we were young. We were learning about love, emotions, expectations, communication and ourselves. Sometimes we got it right, sometimes we got it terribly wrong, and sometimes we were just two stubborn individuals who probably needed to calm down and listen to each other. 😂</p>
+<p>Still, I wouldn't call those years a waste.</p>
+<p>Because whatever name we eventually give what we had, it meant something to me. You meant something to me. And I don't think the fact that things didn't work out exactly as we imagined means we should suddenly pretend that none of it mattered.</p>
+<p>A lot has happened since those days, and I must admit, life has been quite an interesting journey.</p>
+<p>Between navigating UNILAG, discovering new opportunities, getting involved in different projects, travelling, meeting different people, exploring new environments and gradually finding my feet in the things I want to build, I've come to realise that there's so much more to life than the little world we once knew.</p>
+<p>There are places I haven't seen, experiences I haven't had, people I haven't met, dreams I haven't pursued and versions of myself I haven't even discovered yet.</p>
+<p>And honestly, that's exciting.</p>
+<p>I'm beginning to appreciate the beauty of growth, of having something to look forward to, of being intentional about my future and of allowing life to unfold without feeling the need to have every single thing figured out.</p>
+<p>I've also learnt that not every meaningful connection has to be forced into a particular definition or outcome. Sometimes people meet at a particular point in their lives, leave impressions on each other and continue growing in different directions. Sometimes they find their way back. And sometimes life surprises them in ways they never anticipated.</p>
+<p>I suppose that's part of growing up.</p>
+<p>And yeah, sometimes I still think about you. 😂</p>
+<p>Not necessarily because I'm sitting around reminiscing or anything, but because some memories have a funny way of finding their way back to you. Sometimes it's something you said, a particular moment we shared or just some random thing that reminds me of your existence. And before I know it, I'm smiling to myself. I suppose that's what happens when someone has been part of your life for as long as you were part of mine.</p>
+<p>And no, don't let that get to your head. You were troublesome enough already. 😂❤️</p>
+<p>I don't have to pretend you've become just another person I once knew. You were someone I shared a significant part of my growing years with. Someone whose presence, personality, affection and even occasional ability to get on my nerves became part of my everyday life for a while.</p>
+<p>And I won't lie, there were things about you that I really liked. Your little mannerisms, your sass, your stubbornness, the way you could be sweet one minute and an absolute handful the next. 😂</p>
+<p>You certainly weren't the easiest person to deal with, but then again, I doubt I was exactly a walk in the park either.</p>
+<p>And perhaps that's what made some of our moments so interesting. We had our own little world, our own language, our own jokes and those random moments that probably wouldn't make sense to anybody else.</p>
+<p>I don't think you're perfect, and I'm certainly not claiming to be. But there was something about us that I found genuinely special. Something that, even with all its imperfections, I wouldn't casually dismiss.</p>
+<p>And I want you to know that my appreciation for you isn't dependent on whether we eventually become something again or remain two people who occasionally check in on each other.</p>
+<p>If we're friends, that's fine. If life takes us in completely different directions, that's fine too. And if somewhere down the line our paths cross again and we discover that there's still a little something worth exploring, well, I suppose we'll see. 😂</p>
+<p>I'm not making promises on behalf of the future, and I'm certainly not asking you to make any either.</p>
+<p>I'm simply comfortable acknowledging that some people leave a particular kind of impression, and you happen to be one of those people.</p>
+<p>And about that whole different-worlds conversation you once had with me. 😂</p>
+<p>I still remember you telling me we're from different worlds. You at Pan-Atlantic, me at UNILAG. The distance, the financial differences, the different lifestyles and everything else you felt made things complicated.</p>
+<p>I understand that conversation a lot better now than I probably did then.</p>
+<p>Life comes with responsibilities, different circumstances, different priorities and realities that sometimes aren't immediately obvious when all you're thinking about is how much you enjoy someone's company.</p>
+<p>But I've also come to understand that people are constantly growing. Circumstances change, perspectives evolve, opportunities come and go, and the people we are today won't necessarily be the people we become tomorrow.</p>
+<p>I'm not suggesting that everything suddenly becomes simple because of that. I'm just saying that life is a lot bigger than the assumptions we sometimes make about where people belong or what is possible.</p>
+<p>And besides, I don't think two people need to have identical lives to genuinely appreciate one another.</p>
+<p>I guess what I'm trying to say is that I don't think two people have to be in each other's lives in exactly the same way they once were to still have a genuine appreciation for one another. Sometimes it's a random conversation, a little banter, checking up on each other or sharing something that makes you think the other person would find it funny. Nothing complicated, no unnecessary expectations. Just two people who know each other beyond the usual pleasantries and can still share a laugh every now and then.</p>
+<p>And honestly, I'd rather we never get to a point where we feel the need to act like complete strangers who once knew everything about each other.</p>
+<p>Anyway, enough of my philosophical birthday speech. Before you start thinking I've suddenly become a relationship counsellor. 😭😂</p>
+<p>Today is about you.</p>
+<p>You're turning 19!</p>
+<p class="big">NINETEEN.</p>
+<p>I hope you appreciate how quickly you're growing because it feels like just yesterday we were two young people at JAMB lessons trying to figure out what we were doing with ourselves. And now look at you.</p>
+<p>Another year older, another year of experiences, another year of becoming.</p>
+<p>I genuinely want this new year of your life to be a good one. I hope you have more reasons to laugh, more moments that make you excited about waking up, more wins to celebrate and fewer things to worry about. I hope the things you've been praying and quietly working towards begin to fall into place. And when things don't go exactly as planned, I hope you find the strength and grace to keep going.</p>
+<p>I hope 19 treats you kindly, Clarice. I hope you get to experience so many beautiful things, make memories you'll be telling stories about years from now and find yourself in places you once only imagined. You deserve to enjoy life, not just work towards a future version of it.</p>
+<p>And knowing you, I'm sure there are already about a hundred things on your wishlist. 😂❤️</p>
+<p>I hope you become more confident in yourself, more intentional about your dreams and more comfortable with the beautiful woman you're becoming.</p>
+<p>I hope you never have to shrink yourself to fit into places you're meant to outgrow. I hope you never settle for less than the respect, love and consideration you deserve.</p>
+<p>I hope you meet people who see beyond your beauty, appreciate your mind, respect your individuality and genuinely care about your happiness.</p>
+<p>And please, don't let that your stubbornness become a permanent personality trait. There is still room for improvement. 😂</p>
+<p>But seriously, I hope you never lose the little things that make you Ogechi. Your personality, your laughter, your confidence, your softness and even that slightly troublesome side of yours.</p>
+<p>You deserve beautiful things, Clarice. And I sincerely hope life gives you plenty of reasons to experience them.</p>
+<p>Thank you for being part of my story.</p>
+<p>Thank you for the memories, the laughter, the affection, the lessons, the arguments, the unexpected moments and even the experiences we probably wouldn't willingly repeat. 😂</p>
+<p>Thank you for being someone I once got to know in ways not everybody gets to.</p>
+<p>I don't regret meeting you. I don't regret the beautiful moments we shared, and I don't think I'd erase our story just because it had its difficult chapters.</p>
+<p>Perhaps we didn't have everything figured out. Perhaps we weren't always what the other person needed. Perhaps timing, circumstances and our own individual shortcomings got in the way.</p>
+<p>But we lived it. And for what it's worth, I'm grateful we did.</p>
+<p>So here's to 19. 🥂❤️</p>
+<p>Here's to growth, beautiful memories, new adventures, bigger dreams, unexpected blessings, genuine love, healing and becoming everything we're capable of becoming.</p>
+<p>Here's to a life that keeps surprising you in the most beautiful ways.</p>
+<p>And who knows? Perhaps a few years from now, we'll sit somewhere, look back at all this and laugh at how dramatic, stubborn and ridiculously young we were. 😂</p>
+<p>Until then, keep being you. Keep growing. Keep shining. Keep giving life reasons to be interesting.</p>
+<p>And never forget that regardless of how life unfolds, there will always be someone who genuinely wishes you well and is happy to see you win.</p>
+<p>Happy 19th birthday, Ogechi Clarice Nzeadibe.</p>
+<p>Enjoy your day, pretty girl. You deserve to be celebrated. ❤️</p>
+<p class="sig">SEE YOU AT THE TOP, MY SWEET GIRL. ❤️🥂</p>
+   </article>
+  </div></div>
+ </div>
+</section>
+
+<!-- WISHES -->
+<section id="wishes" class="dark grain">
+ <div class="wrap">
+  <p class="eyebrow rv">For the year ahead</p>
+  <h2 class="title rv d1">19 LOOKS BEAUTIFUL ON YOU ❤️</h2>
+  <svg class="orn rv d1" viewBox="0 0 150 14" fill="none" stroke="#c9a45c" aria-hidden="true"><path d="M0 7h58M92 7h58"/><path d="M75 1l6 6-6 6-6-6z" fill="#c9a45c"/></svg>
+  <div class="wish rv d2">
+   <span class="k">✦</span>
+   <p class="rv">I genuinely want this new year of your life to be a good one. I hope you have more reasons to laugh, more moments that make you excited about waking up, more wins to celebrate and fewer things to worry about. I hope the things you've been praying and quietly working towards begin to fall into place. And when things don't go exactly as planned, I hope you find the strength and grace to keep going.</p>
+   <p class="rv">I hope 19 treats you kindly, Clarice. I hope you get to experience so many beautiful things, make memories you'll be telling stories about years from now and find yourself in places you once only imagined. You deserve to enjoy life, not just work towards a future version of it.</p>
+   <p class="rv">And knowing you, I'm sure there are already about a hundred things on your wishlist. 😂❤️</p>
+  </div>
+ </div>
+</section>
+
+<!-- CAKE -->
+<section id="cake" class="grain">
+ <div class="wrap" style="width:100%">
+  <p class="t1 rv">WAIT... WE CAN'T LET YOU LEAVE WITHOUT THIS. ❤️</p>
+  <h2 class="t2 rv d2">IT'S WISH TIME, CLARICE!</h2>
+  <div class="scene" id="scene">
+   <div class="cglow"></div>
+   <div class="plate"></div>
+   <div class="tier t-b"><div class="berries"><b></b><b></b><b></b><b></b><b></b></div><div class="band"></div><div class="pearls"></div></div>
+   <div class="tier t-t"><div class="band"></div><div class="pearls"></div></div>
+   <div class="candle"><div class="wick"></div><button class="flamebtn" id="flameBtn" aria-label="Blow out the candle"><span class="flame" id="flame"></span></button><div class="smoke"><i></i><i></i><i></i></div></div>
+  </div>
+  <p class="t3 rv">Close your eyes for a moment, make a wish and let this new chapter begin.</p>
+  <p class="t4 rv d1">MAKE A WISH, PRETTY GIRL. ✨</p>
+  <div id="wishCtl">
+   <p class="hint">Tap the flame or blow gently to make your wish.</p>
+   <button class="mic" id="micBtn">Blow into the microphone instead</button>
+  </div>
+  <div class="after" id="after">
+   <p class="w1">WISH MADE. ❤️</p>
+   <p class="w2">May this new year bring you beautiful surprises, answered prayers, genuine happiness and countless reasons to smile.</p>
+   <p class="w3">WELCOME TO 19, CLARICE. 🥂</p>
+   <p><button class="btn" id="relight" style="margin-top:1.4rem;padding:.7rem 1.4rem;font-size:.8rem">Make another wish</button></p>
+  </div>
+ </div>
+</section>
+
+<!-- FINAL -->
+<section id="final" class="grain">
+ <div class="wrap">
+  <h2 class="seq" id="f1">HAPPY 19TH BIRTHDAY, <span>OGECHI CLARICE NZEADIBE.</span></h2>
+  <p class="en seq" id="f2">Enjoy your day, pretty girl. You deserve to be celebrated. ❤️</p>
+  <p class="sg seq" id="f3">SEE YOU AT THE TOP, MY SWEET GIRL. ❤️🥂</p>
+  <button class="btn seq" id="f4">Replay this little experience</button>
+ </div>
+</section>
+
+<footer id="foot" class="rv">
+ <p class="m">MADE WITH LOVE, SPECIALLY FOR YOU. ❤️</p>
+ <svg width="120" height="14" viewBox="0 0 120 14" fill="none" stroke="#c9a45c" style="margin:1rem 0" aria-hidden="true"><path d="M0 7h48M72 7h48"/><path d="M60 11C52 6 52 2 56 2c2 0 4 2 4 3 0-1 2-3 4-3 4 0 4 4-4 9z" fill="#7a1730" stroke="none"/></svg>
+ <p class="c">© 2026 — ALL RIGHTS RESERVED.</p>
+ <p class="nm">ALL RIGHTS RESERVED FOR THE BIRTHDAY GIRL HERSELF, OGECHI CLARICE NZEADIBE. ❤️</p>
+ <p class="oo">One of one. Always worth celebrating.</p>
+ <p class="bt">THE CLARICE EXPERIENCE · 10.11.2026</p>
+ <p class="tl2">A little website. A lot of love. ❤️</p>
+</footer>
+</main>
+
+<script>
+(function(){
+'use strict';
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var timers=[];function later(fn,ms){var t=setTimeout(fn,ms);timers.push(t);return t}
+
+/* ---- timeline data ---- */
+var ICONS={
+1:'<svg class="ic" viewBox="0 0 76 50" aria-hidden="true"><circle cx="28" cy="25" r="17"/><circle cx="48" cy="25" r="17"/></svg>',
+2:'<svg class="ic" viewBox="0 0 76 50" aria-hidden="true"><path d="M10 8h56v34H10z" stroke-dasharray="2 3"/><path d="M18 18c6-6 8 6 14 0s8 6 14 0 8 4 12 0M18 30c8-4 12 4 20 0"/></svg>',
+3:'<svg class="ic" viewBox="0 0 76 50" aria-hidden="true"><path d="M4 34c8-2 14-6 20-6 6 0 10 2 14 2M6 28l-2 8M10 30l-1 8M38 24c-3 0-5 2-5 5s3 4 5 4"/><path d="M72 34c-8-2-14-6-20-6-6 0-10 2-14 2M70 28l2 8M66 30l1 8"/></svg>',
+4:'<svg class="ic" viewBox="0 0 76 50" aria-hidden="true"><path d="M38 40C20 28 22 12 32 12c4 0 6 3 6 5 0-2 2-5 6-5 10 0 12 16-6 28z"/></svg>',
+5:'<svg class="ic" viewBox="0 0 76 50" aria-hidden="true"><path d="M8 40c10-8 20-8 30 0 10-8 20-8 30 0V10c-10-8-20-8-30 0-10-8-20-8-30 0z"/><path d="M38 10v30"/></svg>',
+6:'<svg class="ic" viewBox="0 0 76 50" aria-hidden="true"><circle cx="30" cy="25" r="14"/><circle cx="46" cy="25" r="14"/><path d="M38 14c-3 6-3 16 0 22"/></svg>',
+7:'<svg class="ic" viewBox="0 0 76 50" aria-hidden="true"><path d="M30 18c0-8 16-8 16 0 0 6-8 6-8 12M38 38v2"/></svg>',
+8:'<svg class="ic" viewBox="0 0 76 50" aria-hidden="true"><path d="M8 40c10-8 20-8 30 0 10-8 20-8 30 0V10c-10-8-20-8-30 0-10-8-20-8-30 0z"/><path d="M38 10v30" stroke-dasharray="3 3"/></svg>'};
+var CH=[
+['Funny how life brings people back','Reconnected after about five or six years, at Mr. Kunle’s JAMB classes.','It was one of those unexpected moments when life brought two people who had once known each other back into each other’s lives.','two circles, one overlap'],
+['And then we started talking','Ordinary conversations, slowly becoming something more interesting.','There was flirting, teasing, getting to know each other again, and slowly discovering that perhaps there was more between us than we initially admitted.','small talk, big feelings'],
+['The things we didn’t say','Funny how two people can say so much without saying anything.','A particular kind of tension whenever we sat beside each other. We had feelings, but neither of us was ready to say them out loud. Sitting close, the hesitation, the almost-holding-hands moments, that unspoken desire to reach for each other’s hands.','almost…'],
+['The courage to make a move','Before the public holiday, I finally gathered the courage to approach you properly.','The first kiss came after the public holiday. Something that had lived in glances and unspoken feelings became real.','after the holiday ❤️'],
+['The lessons ended. We didn’t.','The JAMB lessons came to an end, but our communication didn’t.','We kept talking for about another month without seeing each other. Apparently, ending the lessons didn’t mean we were ready to stop talking. 😂❤️','still talking…'],
+['A little closer','We saw each other again, and this time things felt a little different.','We had moved beyond the initial awkwardness and shared our first proper make-out. A little more closeness, a little more affection, another chapter added to our story.','page turned'],
+['The unexpected moments','There was even our first pregnancy scare. 😂','Certainly unexpected, and probably terrifying at the time.','plot twist'],
+['Life happened along the way','Like most real stories, ours had its complicated moments.','A period when personal and family circumstances made me distant. We reconnected around the time you were preparing to resume school. Then came misunderstandings, disagreements, moments of distance and eventually separation. Not every chapter unfolded as we might have imagined, but those experiences remain part of the story we shared.','still part of the story']];
+var tl=$('#tl');
+CH.forEach(function(c,i){
+ var d=document.createElement('div');d.className='ch rv';
+ d.innerHTML='<span class="dot">'+(i+1)+'</span><button class="card" aria-expanded="false">'+ICONS[i+1]+'<span class="no">CHAPTER 0'+(i+1)+'</span><h3>'+c[0]+'</h3><p class="s">'+c[1]+'</p><span class="more"><span><p>'+c[2]+'</p></span></span><span class="tap">tap to read more</span></button><span class="note-h hand">'+c[3]+'</span>';
+ tl.appendChild(d);
+ d.querySelector('button').addEventListener('click',function(){var o=d.classList.toggle('open');this.setAttribute('aria-expanded',o);this.querySelector('.tap').textContent=o?'close':'tap to read more'});
+});
+$$('.ch .more').forEach(function(m){m.innerHTML='<div>'+m.firstChild.innerHTML+'</div>'});
+
+/* ---- stars ---- */
+var st=$('#stars');for(var i=0;i<60;i++){var s=document.createElement('span');s.className='star';s.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;animation-delay:'+Math.random()*3+'s;width:'+(1+Math.random()*2)+'px;height:'+(1+Math.random()*2)+'px';st.appendChild(s)}
+
+/* ---- reveal observer ---- */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+function observe(){$$('.rv').forEach(function(el){if(!el.classList.contains('in'))io.observe(el)})}
+observe();
+
+/* ---- scrapbook ---- */
+$$('[data-flip]').forEach(function(p){p.addEventListener('click',function(){p.classList.toggle('open')})});
+var me=$('[data-env]');me.querySelector('.menv').addEventListener('click',function(){me.classList.toggle('open')});
+var hm=['Just a little extra love for your birthday. ❤️'];
+$('#hrt').addEventListener('click',function(){var m=$('#hmsg');m.textContent=hm[0];m.classList.add('in');burstEl(this,22)});
+
+/* ---- audio ---- */
+var audio=new Audio();audio.preload='auto';audio.loop=true;audio.volume=.4;audio.src='birthday-music.mp3';
+var mb=$('#music'),audioOK=true,wantMusic=false;
+function setMusic(on){mb.classList.toggle('on',on);mb.setAttribute('aria-pressed',on)}
+/* fallback: soft music-box "Happy Birthday" synthesised in the browser, used only if birthday-music.mp3 can't be played */
+var sctx=null,sTimer=null,sOn=false;
+var HB=[[392,.75],[392,.25],[440,1],[392,1],[523.25,1],[493.88,2],[392,.75],[392,.25],[440,1],[392,1],[587.33,1],[523.25,2],[392,.75],[392,.25],[783.99,1],[659.25,1],[523.25,1],[493.88,1],[440,2],[698.46,.75],[698.46,.25],[659.25,1],[523.25,1],[587.33,1],[523.25,2]];
+function synthStart(){
+ if(sOn)return;var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+ try{sctx=new AC()}catch(e){return}
+ if(sctx.resume)sctx.resume();sOn=true;
+ var m=sctx.createGain();m.gain.value=.2;m.connect(sctx.destination);var beat=.62,total=0;HB.forEach(function(n){total+=n[1]});
+ (function pass(){if(!sOn)return;var t=sctx.currentTime+.15;
+  HB.forEach(function(n){var o=sctx.createOscillator(),g=sctx.createGain(),d=Math.max(n[1]*beat,.35);
+   o.type='triangle';o.frequency.value=n[0];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.55,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+d+.9);
+   o.connect(g);g.connect(m);o.start(t);o.stop(t+d+1);t+=n[1]*beat});
+  sTimer=setTimeout(pass,(total+3)*beat*1000)})();
+ setMusic(true);mb.classList.remove('na');mb.setAttribute('aria-label','Play or pause background music');
+}
+function synthStop(){sOn=false;clearTimeout(sTimer);if(sctx){try{sctx.close()}catch(e){}sctx=null}setMusic(false)}
+function stopAll(){wantMusic=false;audio.pause();try{audio.currentTime=0}catch(e){}synthStop();setMusic(false)}
+audio.addEventListener('error',function(){audioOK=false;if(wantMusic)synthStart()});
+function playMusic(){
+ wantMusic=true;
+ if(!audioOK){synthStart();return}
+ try{audio.currentTime=0}catch(e){}
+ var p=audio.play();
+ if(p&&p.then)p.then(function(){setMusic(true)}).catch(function(){audioOK=false;synthStart()});
+}
+mb.addEventListener('click',function(){
+ if(sOn){synthStop();wantMusic=false;return}
+ if(audioOK&&!audio.paused){audio.pause();wantMusic=false;setMusic(false);return}
+ wantMusic=true;
+ if(!audioOK){synthStart();return}
+ var p=audio.play();if(p&&p.then)p.then(function(){setMusic(true)}).catch(function(){audioOK=false;synthStart()});
+});
+audio.addEventListener('pause',function(){if(!sOn)setMusic(false)});audio.addEventListener('play',function(){setMusic(true)});
+
+/* ---- intro ---- */
+var intro=$('#intro'),openBtn=$('#openBtn'),opened=false;
+openBtn.addEventListener('click',function(){
+ if(opened)return;opened=true;playMusic();intro.classList.add('opening');
+ mb.classList.add('show');burst(innerWidth/2,innerHeight/2,60,'gold');
+ later(function(){intro.classList.add('gone');document.body.classList.remove('lock');$('#app').classList.add('show');window.scrollTo(0,0)},RM?100:2200);
+});
+$('#app').classList.add('show');$('#app').style.visibility='hidden';
+var _t=setInterval(function(){if(opened){$('#app').style.visibility='';clearInterval(_t)}},100);
+
+/* ---- typewriter ---- */
+var phrase='THEY WOULD SOON PUT OFF THE WIFI',twDone=false,twEl=$('#tw');
+function type(){if(twDone)return;twDone=true;twEl.textContent='';var i=0;(function n(){if(i<phrase.length){twEl.textContent+=phrase[i++];later(n,RM?5:95)}else later(function(){$('#twa').classList.add('in')},700)})()}
+new IntersectionObserver(function(es,o){if(es[0].isIntersecting){type();o.disconnect()}},{threshold:.5}).observe(twEl);
+
+/* ---- letter ---- */
+var lenv=$('#lenv'),ol=$('#openLetter');
+ol.addEventListener('click',function(){
+ if(ol.dataset.used)return;ol.dataset.used=1;lenv.classList.add('open');ol.style.visibility='hidden';ol.style.position='absolute';
+ later(function(){lenv.classList.add('gone');$('#lwrap').classList.add('open');ol.style.display='none';later(function(){$('#lwrap').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})},400)},1100);
+});
+
+/* ---- cake ---- */
+var sc=$('#scene'),flame=$('#flame'),lit=true,cakeSeq=false;
+function extinguish(){
+ if(!lit)return;lit=false;stopMic();
+ flame.classList.add('dying');
+ later(function(){flame.classList.add('gone');sc.classList.add('out');$('.wick').style.background='#111';
+  var r=$('.candle').getBoundingClientRect();burst(r.left+6,r.top-10,70,'gold');
+  $('#wishCtl').style.display='none';
+  var kids=$$('#after > *');kids.forEach(function(k,i){later(function(){k.classList.add('in')},500+i*1500)});
+  later(function(){$('#final').scrollIntoView({behavior:RM?'auto':'smooth'})},9500);
+ },RM?50:1100);
+}
+$('#flameBtn').addEventListener('click',extinguish);
+$('#relight').addEventListener('click',function(){
+ lit=true;flame.className='flame';sc.classList.remove('out');$('.wick').style.background='';
+ $$('#after > *').forEach(function(k){k.classList.remove('in')});$('#wishCtl').style.display='';
+});
+/* mic (optional, only on explicit choice) */
+var mstream=null,mctx=null,mraf=0;
+function stopMic(){cancelAnimationFrame(mraf);if(mstream){mstream.getTracks().forEach(function(t){t.stop()});mstream=null}if(mctx){try{mctx.close()}catch(e){}mctx=null}}
+$('#micBtn').addEventListener('click',function(){
+ var b=this;
+ if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){b.textContent='Microphone unavailable. Just tap the flame ✨';return}
+ navigator.mediaDevices.getUserMedia({audio:true}).then(function(s){
+  mstream=s;var AC=window.AudioContext||window.webkitAudioContext;mctx=new AC();var an=mctx.createAnalyser();an.fftSize=512;mctx.createMediaStreamSource(s).connect(an);
+  var buf=new Uint8Array(an.fftSize),hits=0;b.textContent='Listening… blow gently 🌬️';
+  (function loop(){an.getByteTimeDomainData(buf);var sum=0;for(var i=0;i<buf.length;i++){var v=(buf[i]-128)/128;sum+=v*v}var rms=Math.sqrt(sum/buf.length);
+   hits=rms>.12?hits+1:Math.max(0,hits-1);if(hits>10){extinguish();return}mraf=requestAnimationFrame(loop)})();
+ }).catch(function(){b.textContent='No problem. Tap the flame instead ✨'});
+});
+
+/* cake intro sequence handled by reveal; final reveal */
+var fin=false;
+new IntersectionObserver(function(es){if(es[0].isIntersecting&&!fin){fin=true;seqFinal()}},{threshold:.4}).observe($('#final'));
+function seqFinal(){
+ var ids=['#f1','#f2','#f3','#f4'],d=[200,2200,4400,6400];
+ ids.forEach(function(id,i){later(function(){$(id).classList.add('in')},RM?0:d[i])});
+ if(!RM){for(var k=0;k<4;k++)later(function(){burst(Math.random()*innerWidth,innerHeight*.3,50,'conf')},400+k*900)}
+}
+$('#f4').addEventListener('click',function(){
+ timers.forEach(clearTimeout);timers=[];stopMic();stopAll();
+ fin=false;twDone=false;opened=false;
+ ['#f1','#f2','#f3','#f4'].forEach(function(i){$(i).classList.remove('in')});
+ $('#twa').classList.remove('in');twEl.textContent='';
+ $$('.paper.open,.mini.open,.ch.open').forEach(function(e){e.classList.remove('open')});
+ $('#hmsg').classList.remove('in');
+ lenv.classList.remove('open','gone');$('#lwrap').classList.remove('open');ol.style.cssText='';ol.style.display='';delete ol.dataset.used;
+ lit=true;flame.className='flame';sc.classList.remove('out');$('.wick').style.background='';$$('#after > *').forEach(function(k){k.classList.remove('in')});$('#wishCtl').style.display='';
+ $('#micBtn').textContent='Blow into the microphone instead';
+ $$('.rv.in').forEach(function(e){e.classList.remove('in');io.observe(e)});
+ document.body.classList.add('lock');window.scrollTo(0,0);mb.classList.remove('show');
+ intro.classList.remove('opening');intro.classList.remove('gone');
+ $('#app').style.visibility='hidden';_t=setInterval(function(){if(opened){$('#app').style.visibility='';clearInterval(_t)}},100);
+ new IntersectionObserver(function(es,o){if(es[0].isIntersecting){type();o.disconnect()}},{threshold:.5}).observe(twEl);
+ // replay intro animations
+ intro.querySelectorAll('.l1,h1,.l3,.env,#openBtn').forEach(function(e){e.style.animation='none';void e.offsetWidth;e.style.animation=''});
+});
+
+/* ---- particles ---- */
+var cv=$('#fx'),cx=cv.getContext('2d'),P=[],W,H,dpr=Math.min(devicePixelRatio||1,2);
+function rs(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)}rs();addEventListener('resize',rs);
+var COL=['#f3d9d6','#c98a8f','#e6cf98','#c9a45c','#b23048'];
+function petal(){return {t:'p',x:Math.random()*W,y:-20,vx:(Math.random()-.5)*.6,vy:.5+Math.random()*.9,r:Math.random()*6.28,vr:(Math.random()-.5)*.04,s:5+Math.random()*6,c:COL[Math.random()*3|0],a:.55,life:1e9}}
+function burst(x,y,n,kind){if(RM)return;for(var i=0;i<n;i++){var an=Math.random()*6.28,sp=2+Math.random()*(kind==='conf'?6:4);
+ P.push({t:kind==='conf'?'c':'g',x:x,y:y,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp-(kind==='conf'?3:1),r:Math.random()*6.28,vr:(Math.random()-.5)*.3,s:kind==='conf'?4+Math.random()*4:1.5+Math.random()*2.5,c:kind==='conf'?COL[Math.random()*5|0]:(Math.random()<.5?'#e6cf98':'#fff2c4'),a:1,life:90+Math.random()*60,g:kind==='conf'?.12:.03})}}
+function burstEl(el,n){var r=el.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,n,'gold')}
+var pc=0;
+function frame(){
+ cx.clearRect(0,0,W,H);
+ if(!RM&&++pc%40===0&&P.length<90)P.push(petal());
+ for(var i=P.length-1;i>=0;i--){var p=P[i];p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;if(p.g)p.vy+=p.g;else p.x+=Math.sin(p.y/40)*.4;p.life--;
+  if(p.t!=='p')p.a=Math.max(0,Math.min(1,p.life/40));
+  if(p.y>H+30||p.life<=0||p.x<-40||p.x>W+40){P.splice(i,1);continue}
+  cx.save();cx.globalAlpha=p.a;cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;
+  if(p.t==='g'){cx.beginPath();cx.arc(0,0,p.s,0,6.28);cx.shadowColor=p.c;cx.shadowBlur=8;cx.fill()}
+  else if(p.t==='c'){cx.fillRect(-p.s/2,-p.s,p.s,p.s*2)}
+  else{cx.beginPath();cx.ellipse(0,0,p.s,p.s*.55,0,0,6.28);cx.fill()}
+  cx.restore()}
+ requestAnimationFrame(frame)}
+frame();
+})();
+</script>
+</body>
+</html>
